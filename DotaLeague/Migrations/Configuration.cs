@@ -1,27 +1,34 @@
-ï»¿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using DotaLeague.Models;
 
-namespace DotaLeague.DAL
+namespace DotaLeague.Migrations
 {
-    public class WebpageInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<WebpageContext>
+    using System;
+    using System.Data.Entity;
+    using System.Data.Entity.Migrations;
+    using System.Linq;
+
+    internal sealed class Configuration : DbMigrationsConfiguration<DotaLeague.DAL.WebpageContext>
     {
-        protected override void Seed(WebpageContext context)
+        public Configuration()
+        {
+            AutomaticMigrationsEnabled = false;
+        }
+
+        protected override void Seed(DotaLeague.DAL.WebpageContext context)
         {
             var users = new List<User>();
-            var user1 = new User {FirstName = "Carsten", LastName = "Jacobsen", NickName = "LugteBOB<3", UserID = 1};
+            var user1 = new User { FirstName = "Carsten", LastName = "Jacobsen", NickName = "LugteBOB<3", UserID = 1 };
             var user2 = new User { FirstName = "John", LastName = "Hansen", NickName = "Gert", UserID = 2 };
             var user3 = new User { FirstName = "Michael", LastName = "Westergaard", NickName = "Postgame", UserID = 3 };
-            var user4 = new User {FirstName = "Hans", LastName = "Hansen", NickName = "HanZen", UserID = 4};
-            var user5 = new User {FirstName = "Kurt", LastName = "Jensen", NickName = "Jenzen", UserID = 5};
-            var user6 = new User {FirstName = "Marco", LastName = "Heigren", NickName = "Zenzey", UserID = 6};
-            var user7 = new User {FirstName = "Benjamin", LastName = "Frantzen", NickName = "zxio", UserID = 7};
-            var user8 = new User {FirstName = "Sabrina", LastName = "Berg", NickName = "Futte", UserID = 8};
-            var user9 = new User {FirstName = "SÃ¸ren", LastName = "Westergaard", NickName = "DÃ¸rmand", UserID = 9};
-            var user10 = new User {FirstName = "Bo", LastName = "Fjold", NickName = "Dotted", UserID = 10};
-            var user11 = new User {FirstName = "Hans", LastName = "Jensen", NickName = "HamSelv", UserID = 11};
+            var user4 = new User { FirstName = "Hans", LastName = "Hansen", NickName = "HanZen", UserID = 4 };
+            var user5 = new User { FirstName = "Kurt", LastName = "Jensen", NickName = "Jenzen", UserID = 5 };
+            var user6 = new User { FirstName = "Marco", LastName = "Heigren", NickName = "Zenzey", UserID = 6 };
+            var user7 = new User { FirstName = "Benjamin", LastName = "Frantzen", NickName = "zxio", UserID = 7 };
+            var user8 = new User { FirstName = "Sabrina", LastName = "Berg", NickName = "Futte", UserID = 8 };
+            var user9 = new User { FirstName = "Søren", LastName = "Westergaard", NickName = "Dørmand", UserID = 9 };
+            var user10 = new User { FirstName = "Bo", LastName = "Fjold", NickName = "Dotted", UserID = 10 };
+            var user11 = new User { FirstName = "Hans", LastName = "Jensen", NickName = "HamSelv", UserID = 11 };
 
             users.Add(user1);
             users.Add(user2);
@@ -46,12 +53,12 @@ namespace DotaLeague.DAL
                 TeamTag = "BLAN",
                 RegistrationDateTime = new DateTime(2014, 4, 22),
                 Approved = true,
-                UserList = new List<User> { user1, user2, user3, user4, user5, user6}
+                UserList = new List<User> { user1, user2, user3, user4, user5, user6 }
             };
             var team2 = new Team
             {
                 TeamID = 2,
-                TeamName = "Team trÃ¦ls pis",
+                TeamName = "Team træls pis",
                 TeamTag = "TTP",
                 RegistrationDateTime = new DateTime(2013, 3, 30),
                 Approved = false,

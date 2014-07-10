@@ -179,10 +179,14 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DAL\WebpageContext.cs" />
-    <Compile Include="DAL\WebpageInitializer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201407101531561_InitialCreate.cs" />
+    <Compile Include="Migrations\201407101531561_InitialCreate.Designer.cs">
+      <DependentUpon>201407101531561_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\League.cs" />
     <Compile Include="Models\Team.cs" />
@@ -221,6 +225,11 @@
     <Folder Include="App_Data\" />
     <Folder Include="Content\Images\Account\" />
     <Folder Include="Content\Images\Shared\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201407101531561_InitialCreate.resx">
+      <DependentUpon>201407101531561_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

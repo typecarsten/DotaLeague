@@ -15,6 +15,7 @@ namespace DotaLeague.Models
         public bool Approved { get; set; }
 
         //En til mange relation mellem team og brugere
-        public virtual ICollection<User> UserList { get; set; } 
+        public virtual ICollection<User> UserList { get; set; }
+        public virtual League League { get; set; }
     }
 }
